@@ -1,0 +1,6 @@
+
+-- Tie the alpha table to fluxes, via TOPCAT with TAP_UPLOAD
+select basic.ra, basic.dec, basic.main_id, basic.oid, allfluxes.* from basic
+   join TAP_UPLOAD.alpha2021 on basic.main_id=alpha2021.name
+   join allfluxes on allfluxes.oidref=basic.oid
+;
